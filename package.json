@@ -1,0 +1,18 @@
+{
+  "name": "@gitrevue/sdk",
+  "version": "0.0.0",
+  "description": "GitRevue CLI - Simplify your code reviews",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wade Urry <gitrevue@iwader.co.uk>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitrevue/sdk-js.git"
+  },
+  "engines": {
+    "node": ">= 10"
+  }
+}
