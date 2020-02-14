@@ -2,9 +2,16 @@
   "name": "@gitrevue/sdk",
   "version": "0.0.0",
   "description": "GitRevue CLI - Simplify your code reviews",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc",
+    "build:watch": "npm run clean && tsc --watch",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "lint": "tslint src/**/*.ts",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:staged": "./node_modules/.bin/pretty-quick --staged"
   },
   "author": "Wade Urry <gitrevue@iwader.co.uk>",
   "license": "MIT",
@@ -13,6 +20,30 @@
     "url": "https://github.com/gitrevue/sdk-js.git"
   },
   "engines": {
-    "node": ">= 10"
-  }
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "@types/node-fetch": "^2.5.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "jest-fetch-mock": "^3.0.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.5"
+  },
+  "pre-commit": [
+    "lint:staged"
+  ]
 }
