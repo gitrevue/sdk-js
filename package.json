@@ -21,6 +21,10 @@
     "type": "git",
     "url": "git+https://github.com/gitrevue/sdk-js.git"
   },
+  "bugs": {
+    "url": "https://github.com/gitrevue/sdk-js/issues"
+  },
+  "homepage": "https://github.com/gitrevue/sdk-js#readme",
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
