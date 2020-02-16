@@ -8,7 +8,7 @@
 ## Installing
 
 ```sh
-npm install @gitrevue/cli
+npm install @gitrevue/sdk
 ```
 
 ## License
