@@ -1,0 +1,5 @@
+require_assignee: true
+
+paired_files:
+  package.json:
+    - package-lock.json
