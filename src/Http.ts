@@ -1,4 +1,5 @@
 import fetch, { BodyInit, Response } from "node-fetch";
+import HttpError from "./HttpError";
 
 export enum HttpMethod {
   HEAD = "HEAD",
@@ -20,20 +21,29 @@ class Http {
     this.token = token;
   }
 
-  request(
+  async request(
     method: HttpMethod,
     uri: string,
     body?: BodyInit | null
   ): Promise<Response> {
-    return fetch(`${this.baseUrl}/${uri}`, {
-      method,
-      body,
-      headers: {
-        Authorization: `Bearer ${this.token}`,
-        "Content-Type": "application/json",
-        Accept: "application/json"
+    const response = await fetch(
+      `${this.baseUrl}/${uri.replace(/^[\/]+/, "")}`,
+      {
+        method,
+        body,
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
       }
-    });
+    );
+
+    if (!response.ok) {
+      throw new HttpError(response);
+    }
+
+    return response;
   }
 
   head(uri: string): Promise<Response> {
@@ -60,8 +70,8 @@ class Http {
     return this.request(HttpMethod.PATCH, uri, body);
   }
 
-  delete(uri: string): Promise<Response> {
-    return this.request(HttpMethod.DELETE, uri);
+  delete(uri: string, body?: BodyInit | null): Promise<Response> {
+    return this.request(HttpMethod.DELETE, uri, body);
   }
 }
 

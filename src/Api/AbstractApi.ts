@@ -10,12 +10,12 @@ export interface ResourceCollection<Entity> {
   };
   meta: {
     current_page: number;
-    from: bigint;
+    from: number;
     last_page: number;
     path: string;
     per_page: number;
-    to: bigint;
-    total: bigint;
+    to: number;
+    total: number;
   };
 }
 

@@ -2,7 +2,7 @@ import AbstractApi from "./AbstractApi";
 
 export interface Asset {
   path: string;
-  bytes: bigint;
+  bytes: number;
 }
 
 enum AssetCode {
@@ -20,14 +20,14 @@ enum AssetName {
 }
 
 export interface AssetResource {
-  id: bigint;
+  id: number;
   commit: string;
   type: {
     code: AssetCode;
     name: AssetName;
   };
   path: string;
-  bytes: bigint;
+  bytes: number;
 }
 
 class Assets extends AbstractApi {
@@ -42,12 +42,7 @@ class Assets extends AbstractApi {
       assets
     });
 
-    return this.http
-      .post("/assets", body)
-      .then(r => r.json())
-      .catch(err => {
-        throw err;
-      });
+    return this.http.post("/assets", body).then(r => r.json());
   }
 }
 
