@@ -13,9 +13,7 @@
     "test:watch": "npm test -- --watch",
     "lint": "tslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "lint:staged": "./node_modules/.bin/pretty-quick --staged",
-    "pretest": "npm run build",
-    "prepare": "npm run build"
+    "lint:staged": "./node_modules/.bin/pretty-quick --staged"
   },
   "author": "Wade Urry <gitrevue@iwader.co.uk>",
   "license": "MIT",
