@@ -53,5 +53,12 @@
   },
   "pre-commit": [
     "lint:staged"
+  ],
+  "files": [
+    "src/**/*",
+    "dist/**/*",
+    "README.md",
+    "LICENSE",
+    "index.d.ts"
   ]
 }
