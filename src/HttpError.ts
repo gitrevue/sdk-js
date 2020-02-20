@@ -1,14 +1,18 @@
 import { Response } from "node-fetch";
 
 class HttpError {
-  response: Response;
+  private response: Response;
 
   constructor(response: Response) {
     this.response = response;
   }
 
-  get status(): number {
+  status(): number {
     return this.response.status;
+  }
+
+  body(): Promise<string> {
+    return this.response.text();
   }
 }
 
