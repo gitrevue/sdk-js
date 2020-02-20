@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "GitRevue JavaScript SDK - Simplify your code reviews",
   "main": "dist/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc",
