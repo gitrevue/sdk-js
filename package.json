@@ -1,6 +1,6 @@
 {
   "name": "@gitrevue/sdk",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "GitRevue JavaScript SDK - Simplify your code reviews",
   "main": "dist/index.js",
   "types": "index.d.ts",
