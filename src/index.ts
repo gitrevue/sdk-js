@@ -11,12 +11,13 @@ class GitRevue {
 
   protected readonly http: Http;
 
-  public readonly Assets: Assets;
+  public readonly assets: Assets;
 
   constructor(config: Config) {
     this.config = config;
 
     this.http = new Http(this.config.url, this.config.token);
+    this.assets = new Assets(this.http);
   }
 }
 
