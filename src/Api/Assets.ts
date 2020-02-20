@@ -1,3 +1,4 @@
+import { Response } from "node-fetch";
 import AbstractApi from "./AbstractApi";
 
 export interface Asset {
