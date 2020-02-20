@@ -17,7 +17,7 @@ class Http {
   private readonly token: string;
 
   constructor(baseUrl: string, token: string) {
-    this.baseUrl = baseUrl;
+    this.baseUrl = `${baseUrl.replace(/[\/]+$/, "")}/api`;
     this.token = token;
   }
 
