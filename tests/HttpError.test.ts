@@ -11,6 +11,6 @@ describe("HttpError", () => {
   it("should return the response's status code", () => {
     const err = new HttpError(new Response(null, { status: 500 }));
 
-    expect(err.status).toEqual(500);
+    expect(err.status()).toEqual(500);
   });
 });

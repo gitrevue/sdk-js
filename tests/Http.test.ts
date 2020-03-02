@@ -20,7 +20,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "GET",
@@ -51,7 +51,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "HEAD",
@@ -71,7 +71,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "OPTIONS",
@@ -91,7 +91,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "GET",
@@ -112,7 +112,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "POST",
@@ -134,7 +134,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "PUT",
@@ -156,7 +156,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "PATCH",
@@ -178,7 +178,7 @@ describe("Http", () => {
 
     expect(fetchMock.mock.calls.length).toEqual(1);
     expect(fetchMock.mock.calls[0][0]).toEqual(
-      "https://test.gitrevue.io/testing"
+      "https://test.gitrevue.io/api/testing"
     );
     expect(fetchMock.mock.calls[0][1]).toEqual({
       method: "DELETE",
