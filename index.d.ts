@@ -47,7 +47,7 @@ declare module "@gitrevue/sdk" {
   }
 
   class GitRevue {
-    public readonly assets: Artifacts;
+    public readonly artifacts: Artifacts;
 
     constructor(config: Config);
   }
