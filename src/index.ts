@@ -1,5 +1,5 @@
 import Http from "./Http";
-import Assets from "./Api/Assets";
+import Artifacts from "./Api/Artifacts";
 
 export interface Config {
   token: string;
@@ -11,13 +11,13 @@ class GitRevue {
 
   protected readonly http: Http;
 
-  public readonly assets: Assets;
+  public readonly artifacts: Artifacts;
 
   constructor(config: Config) {
     this.config = config;
 
     this.http = new Http(this.config.url, this.config.token);
-    this.assets = new Assets(this.http);
+    this.artifacts = new Artifacts(this.http);
   }
 }
 

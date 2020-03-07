@@ -1,24 +1,24 @@
-import Assets from "../../src/Api/Assets";
+import Artifacts from "../../src/Api/Artifacts";
 import Http from "../../src/Http";
 import { Response } from "node-fetch";
 
 jest.mock("../../src/Http");
 
-describe("Api -> Assets", () => {
+describe("Api -> Artifacts", () => {
   beforeEach(() => {
     // @ts-ignore
     Http.mockClear();
   });
 
   it("should instantiate", () => {
-    const assets = new Assets(
+    const artifacts = new Artifacts(
       new Http("https://test.gitrevue.io", "MY_API_TOKEN")
     );
 
-    expect(assets).toBeInstanceOf(Assets);
+    expect(artifacts).toBeInstanceOf(Artifacts);
   });
 
-  it("should create an asset", async () => {
+  it("should create an artifact", async () => {
     const response = [
       {
         id: 9,
@@ -29,7 +29,7 @@ describe("Api -> Assets", () => {
           code: 1,
           name: "CSS"
         },
-        path: "/assets/app.css",
+        path: "/artifacts/app.css",
         bytes: 1000000
       }
     ];
@@ -40,17 +40,17 @@ describe("Api -> Assets", () => {
     );
     Http.prototype.post = postMock;
 
-    const assets = new Assets(
+    const artifacts = new Artifacts(
       new Http("https://test.gitrevue.io", "MY_API_TOKEN")
     );
 
     await expect(
-      assets.create(
+      artifacts.create(
         "gitrevue/website",
         "eaab845393476582058693c22554c6b90cf8e989",
         [
           {
-            path: "/assets/app.css",
+            path: "/artifacts/app.css",
             bytes: 1000000
           }
         ]

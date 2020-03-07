@@ -8,46 +8,46 @@ declare module "@gitrevue/sdk" {
     url: string;
   }
 
-  export interface Asset {
+  export interface Artifact {
     path: string;
     bytes: number;
   }
 
-  enum AssetCode {
+  enum ArtifactCode {
     CSS = 1,
     JAVASCRIPT = 2,
     IMAGE = 3,
     OTHER = 100
   }
 
-  enum AssetName {
+  enum ArtifactName {
     CSS = "CSS",
     JAVASCRIPT = "JavaScript",
     IMAGE = "Image",
     OTHER = "Other"
   }
 
-  interface AssetResource {
+  interface ArtifactResource {
     id: number;
     commit: string;
     type: {
-      code: AssetCode;
-      name: AssetName;
+      code: ArtifactCode;
+      name: ArtifactName;
     };
     path: string;
     bytes: number;
   }
 
-  class Assets {
+  class Artifacts {
     create(
       repository: string,
       commit: string,
-      assets: Asset[]
-    ): Promise<AssetResource[]>;
+      artifacts: Artifact[]
+    ): Promise<ArtifactResource[]>;
   }
 
   class GitRevue {
-    public readonly assets: Assets;
+    public readonly artifacts: Artifacts;
 
     constructor(config: Config);
   }

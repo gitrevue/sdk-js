@@ -1,50 +1,50 @@
 import { Response } from "node-fetch";
 import AbstractApi from "./AbstractApi";
 
-export interface Asset {
+export interface Artifact {
   path: string;
   bytes: number;
 }
 
-enum AssetCode {
+enum ArtifactCode {
   CSS = 1,
   JAVASCRIPT = 2,
   IMAGE = 3,
   OTHER = 100
 }
 
-enum AssetName {
+enum ArtifactName {
   CSS = "CSS",
   JAVASCRIPT = "JavaScript",
   IMAGE = "Image",
   OTHER = "Other"
 }
 
-export interface AssetResource {
+export interface ArtifactResource {
   id: number;
   commit: string;
   type: {
-    code: AssetCode;
-    name: AssetName;
+    code: ArtifactCode;
+    name: ArtifactName;
   };
   path: string;
   bytes: number;
 }
 
-class Assets extends AbstractApi {
+class Artifacts extends AbstractApi {
   create(
     repository: string,
     commit: string,
-    assets: Asset[]
-  ): Promise<AssetResource[]> {
+    artifacts: Artifact[]
+  ): Promise<ArtifactResource[]> {
     const body = JSON.stringify({
       repository,
       commit,
-      assets
+      artifacts
     });
 
-    return this.http.post("/assets", body).then(r => r.json());
+    return this.http.post("/artifacts", body).then(r => r.json());
   }
 }
 
-export default Assets;
+export default Artifacts;
