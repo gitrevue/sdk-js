@@ -42,7 +42,8 @@ declare module "@gitrevue/sdk" {
     create(
       repository: string,
       commit: string,
-      artifacts: Artifact[]
+      artifacts: Artifact[],
+      pullRequest: number | void
     ): Promise<ArtifactResource[]>;
   }
 

@@ -1,4 +1,3 @@
-import { Response } from "node-fetch";
 import AbstractApi from "./AbstractApi";
 
 export interface Artifact {
@@ -35,13 +34,17 @@ class Artifacts extends AbstractApi {
   create(
     repository: string,
     commit: string,
-    artifacts: Artifact[]
+    artifacts: Artifact[],
+    pullRequest: number | void
   ): Promise<ArtifactResource[]> {
-    const body = JSON.stringify({
+    const payload = {
       repository,
-      commit,
-      artifacts
-    });
+      head_sha: commit,
+      artifacts,
+      pull_request: pullRequest || undefined
+    };
+
+    const body = JSON.stringify(payload);
 
     return this.http.post("/artifacts", body).then(r => r.json());
   }
