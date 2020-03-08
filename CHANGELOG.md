@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Rename `Assets` to `Artifacts`
+- Send optional pull request number when reporting Artifacts
