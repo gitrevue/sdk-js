@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.0](https://github.com/gitrevue/sdk-js/releases/v0.2.0)
+
 ### Changed
 
 - Rename `Assets` to `Artifacts`
